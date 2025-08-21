@@ -17,7 +17,7 @@ import { Server } from 'socket.io';
 const port = process.env.PORT || 3000;
 
 
-const server = http.createServer(app);
+//const server = http.createServer(app);
 
 //const server = require('http').createServer();
 const io =new Server(server,{
@@ -102,7 +102,7 @@ io.on('connection', socket => {
 //server.listen(3000);
 
 
-server.listen(port, () => {
+/*server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-});
+});*/
 
