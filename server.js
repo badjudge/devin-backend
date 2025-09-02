@@ -10,6 +10,20 @@ import {generateResult} from './services/ai.service.js'
 //mongoose.connect(process.env.MONGODB_URI);
 //console.log("Mongo URI:", process.env.MONGODB_URI);
 
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("✅ MongoDB connected");
+  server.listen(port, () => {
+    console.log(`🚀 Server is running on port ${port}`);
+  });
+})
+.catch((err) => {
+  console.error("❌ MongoDB connection error:", err);
+});
+
 import http from 'http';
 import app from './app.js';
 import { Server } from 'socket.io';
