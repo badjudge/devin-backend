@@ -21,9 +21,11 @@ app.use(cookieParser());
 app.use('/users',userRoutes);
 app.use('/projects', projectRoutes);
 app.use("/ai",aiRoutes);
+//app.disable('x-powered-by');
 
 app.get('/',(req,res)=> {
   res.send("hello");
 });
 
-module.exports = app;
+//module.exports = app;
+export default app
