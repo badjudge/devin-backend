@@ -13,7 +13,11 @@ connect();
 const app=express();
 
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://devin-wk5q.onrender.com',
+  credentials: true
+}));
 app.use(morgon('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
