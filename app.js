@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import projectRoutes from './routes/project.routes.js';
 import cors from 'cors';
 import aiRoutes from './routes/ai.routes.js'
+import authRoutes from './routes/auth.js';
 
 
 connect();
@@ -26,6 +27,8 @@ app.use('/users',userRoutes);
 app.use('/projects', projectRoutes);
 app.use("/ai",aiRoutes);
 //app.disable('x-powered-by');
+app.use('/api/auth', authRoutes);
+
 
 app.get('/',(req,res)=> {
   res.send("hello");
